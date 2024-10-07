@@ -144,6 +144,7 @@ bool ParseAlphaCCConfig(const std::string& file_path) {
   RETURN_ON_FAIL(GetBool(second, "enabled", &config->save_log_to_file));
   if (config->save_log_to_file) {
     RETURN_ON_FAIL(GetString(second, "log_output_path", &config->log_output_path));
+    RETURN_ON_FAIL(GetString(second, "log_bwe_output_path", &config->log_bwe_output_path));
   }
 
   return true;

@@ -117,10 +117,13 @@ void RemoteEstimatorProxy::IncomingPacket(int64_t arrival_time_ms,
   if (time_to_send_bew_message) {
     BweMessage bwe;
     if (onnx_infer_) {
+      RTC_LOG(LS_INFO) << "Using ONNX";
       estimation = onnxinfer::GetBweEstimate(onnx_infer_);
     } else {
+      RTC_LOG(LS_INFO) << "Using Python";
       estimation = cmdinfer::GetEstimatedBandwidth();
     }
+    RTC_LOG(LS_INFO) << "Estimation:" << estimation;
     bwe.pacing_rate = bwe.padding_rate = bwe.target_rate = estimation;
     bwe.timestamp_ms = clock_->TimeInMilliseconds();
     SendbackBweEstimation(bwe);

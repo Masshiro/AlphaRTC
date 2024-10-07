@@ -22,6 +22,9 @@ void FileLogSink::OnLogMessage(const std::string& msg,
   OnLogMessage(tag + (": " + msg), severity);
 }
 
+
+//***********************************/
+
 void FileLogSink::OnLogMessage(const std::string& msg,
                                rtc::LoggingSeverity /* severity */) {
   OnLogMessage(msg);

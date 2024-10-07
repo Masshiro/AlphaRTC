@@ -66,6 +66,7 @@ struct AlphaCCConfig {
 
   bool save_log_to_file;
   std::string log_output_path;
+  std::string log_bwe_output_path;
 };
 
 // Get alphaCC global configurations

@@ -4,6 +4,9 @@
 import sys
 import json
 import glob
+import logging
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', filename='out/cmdinfer_py.log')
 
 
 RequestBandwidthCommand = "RequestBandwidth"
@@ -31,6 +34,7 @@ def find_estimator_class():
 
 
 def main(ifd = sys.stdin, ofd = sys.stdout):
+    logging.debug("main is being executed")
     estimator_class = find_estimator_class()
     estimator = estimator_class()
     while True:
@@ -45,6 +49,7 @@ def main(ifd = sys.stdin, ofd = sys.stdout):
             continue
         request = request_estimated_bandwidth(line)
         if request:
+            logging.debug("request has been made.")
             bandwidth = estimator.get_estimated_bandwidth()
             ofd.write("{}\n".format(int(bandwidth)).encode("utf-8"))
             ofd.flush()
