@@ -1,0 +1,19 @@
+(field_trial.cc:140): Setting field trial string:WebRTC-KeepAbsSendTimeExtension/Enabled/
+(field_trial.cc:140): Setting field trial string:WebRTC-KeepAbsSendTimeExtension/Enabled/
+
+Traceback (most recent call last):
+  File "/home/masshiro/Projects/AlphaRTC/target/bin/peerconnection_serverless", line 23, in main
+    cmdinfer.main(app.stdout, app.stdin)
+  File "/home/masshiro/Projects/AlphaRTC/target/pylib/cmdinfer.py", line 37, in main
+    line = ifd.readline()
+           ^^^^^^^^^^^^^^
+KeyboardInterrupt
+(field_trial.cc:140): Setting field trial string:WebRTC-KeepAbsSendTimeExtension/Enabled/
+
+Traceback (most recent call last):
+  File "/home/masshiro/Projects/AlphaRTC/target/bin/peerconnection_serverless", line 23, in main
+    cmdinfer.main(app.stdout, app.stdin)
+  File "/home/masshiro/Projects/AlphaRTC/target/pylib/cmdinfer.py", line 37, in main
+    line = ifd.readline()
+           ^^^^^^^^^^^^^^
+KeyboardInterrupt
